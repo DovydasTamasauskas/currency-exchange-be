@@ -9,6 +9,10 @@ app.get("/", async (req, res) => {
   res.send("working...");
 });
 
+app.get("/get/supported-currencies", async (req, res) => {
+  res.json({ currencies: SUPPORTED_CURRENCIES });
+});
+
 app.get("/exchange", async (req, res) => {
   const { baseCurrency, quoteCurrency, baseAmount } = req.query;
   var rates = null;
