@@ -22,3 +22,5 @@ Start the project:
 ```sh
 node index.js
 ```
+
+Navigate to `http://localhost:3001/exchange?baseCurrency=ILS&quoteCurrency=USD&baseAmount=8` link. You should see currency exchange from `ILS` to `USD`. In order to see whole app please also start [frontend](https://github.com/DovydasTamasauskas/currency-exchange) part.
