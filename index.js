@@ -1,9 +1,8 @@
 const axios = require("axios");
 const server = require("./public/server");
+const { EXCHANGE_URL } = require("./public/urls");
 
 const app = server.init();
-
-const EXCHANGE_URL = "https://api.exchangerate-api.com/v4/latest/USD";
 
 app.get("/", async (req, res) => {
   res.send("working...");
