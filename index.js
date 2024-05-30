@@ -10,11 +10,18 @@ app.get("/", async (req, res) => {
 
 app.get("/exchange", async (req, res) => {
   const { baseCurrency, quoteCurrency, baseAmount } = req.query;
-  var result = null;
+  var rates = null;
+
   if (baseCurrency && quoteCurrency && baseAmount) {
-    const response = await axios.get(EXCHANGE_URL);
-    result = response.data.rates;
+    try {
+      const response = await axios.get(EXCHANGE_URL);
+      rates = response.data.rates;
+    } catch (error) {
+      return res
+        .status(500)
+        .json({ message: "Failed to fetch exchange rates", error });
+    }
   }
 
-  res.json(result);
+  res.json(rates);
 });
