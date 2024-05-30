@@ -1,8 +1,8 @@
 const cors = require("cors");
 const express = require("express");
 
-const PORT = process.env.PORT || 3000;
-const FE_URL = process.env.FE_URL || "http://localhost:3001";
+const PORT = process.env.PORT || 3001;
+const FE_URL = process.env.FE_URL || "http://localhost:3000";
 
 const init = () => {
   const app = express();
