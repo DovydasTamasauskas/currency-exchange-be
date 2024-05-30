@@ -1,10 +1,9 @@
-const express = require("express");
 const axios = require("axios");
+const server = require("./public/server");
 
-const PORT = 3000;
+const app = server.init();
+
 const EXCHANGE_URL = "https://api.exchangerate-api.com/v4/latest/USD";
-
-const app = express();
 
 app.get("/", async (req, res) => {
   res.send("working...");
@@ -19,8 +18,4 @@ app.get("/exchange", async (req, res) => {
   }
 
   res.json(result);
-});
-
-app.listen(PORT, () => {
-  console.log(`running...`);
 });
