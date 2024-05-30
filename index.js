@@ -29,7 +29,7 @@ app.get("/exchange", async (req, res) => {
 
   if (baseCurrency && quoteCurrency && baseAmount) {
     try {
-      const response = await axios.get(EXCHANGE_URL);
+      const response = await axios.get(`${EXCHANGE_URL}/${baseCurrency}`);
       rates = response.data.rates;
     } catch {
       return res.status(500).json({ error: "Failed to fetch" });
@@ -39,5 +39,7 @@ app.get("/exchange", async (req, res) => {
   if (!rates[quoteCurrency] || !rates[baseCurrency])
     return res.status(400).json({ error: "Currency not supported" });
 
-  res.json(rates);
+  const quoteAmount = Math.round(baseAmount * rates[quoteCurrency] * 10) / 1000;
+
+  res.json({ quoteAmount, rates });
 });
