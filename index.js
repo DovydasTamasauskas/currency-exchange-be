@@ -49,5 +49,5 @@ app.get("/exchange", async (req, res) => {
 });
 
 app.get("/get/supported-currencies", async (req, res) => {
-  res.json({ currencies: SUPPORTED_CURRENCIES });
+  res.json({ result: SUPPORTED_CURRENCIES });
 });
