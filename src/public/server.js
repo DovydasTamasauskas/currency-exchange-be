@@ -1,5 +1,5 @@
-const cors = require("cors");
-const express = require("express");
+import cors from "cors";
+import express from "express";
 
 const PORT = process.env.PORT || 3001;
 const FE_URL = process.env.FE_URL || "http://localhost:3000";
@@ -18,6 +18,4 @@ const init = () => {
   return app;
 };
 
-module.exports = {
-  init,
-};
+export default { init };

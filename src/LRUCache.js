@@ -1,4 +1,4 @@
-class LRUCache {
+export default class LRUCache {
   constructor(max = 10) {
     this.max = max;
     this.cache = new Map();
@@ -20,5 +20,3 @@ class LRUCache {
     return this.cache.keys();
   }
 }
-
-module.exports = { LRUCache };
