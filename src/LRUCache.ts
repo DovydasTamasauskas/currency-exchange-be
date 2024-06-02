@@ -1,14 +1,18 @@
 export default class LRUCache {
+
+   max: number;
+   cache: Map<string, {}>;
+
   constructor(max = 10) {
     this.max = max;
     this.cache = new Map();
   }
 
-  get(key) {
+  get(key: string) {
     return this.cache.get(key);
   }
 
-  set(key, val) {
+  set(key: string, val: {}) {
     this.cache.set(key, val);
   }
 

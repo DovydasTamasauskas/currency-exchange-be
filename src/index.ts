@@ -1,7 +1,7 @@
 import axios from "axios";
-import server from "./public/server.js";
-import { EXCHANGE_URL } from "./public/urls.js";
-import LRUCache from "./LRUCache.js";
+import server from "./public/server";
+import { EXCHANGE_URL } from "./public/urls";
+import LRUCache from "./LRUCache";
 
 const app = server.init();
 
