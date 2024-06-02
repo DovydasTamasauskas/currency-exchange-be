@@ -20,7 +20,7 @@ Project frontend part is in [this repo](https://github.com/DovydasTamasauskas/cu
 Start the project:
 
 ```sh
-node index.js
+npm run index.js
 ```
 
 Navigate to `http://localhost:3001/exchange?baseCurrency=ILS&quoteCurrency=USD&baseAmount=8` link. You should see currency exchange from `ILS` to `USD`. In order to see whole app please also start [frontend](https://github.com/DovydasTamasauskas/currency-exchange) part.
